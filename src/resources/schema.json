@@ -1,0 +1,446 @@
+{
+  "name": "llmquestions",
+  "version": "1.0",
+  "readOnly": false,
+  "systemNamespace": false,
+  "classes": [
+    {
+      "name": "llmquestions:chat_history",
+      "metaProperties": [
+        {
+          "name": "llmquestions:ai_role",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:chat_mode",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:chat_title",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:class_name",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:doc_path",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:message_content",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:message_type",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:search_query",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:session_id",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:source_excerpts",
+          "type": {
+            "name": "kmd:string_multiple"
+          }
+        },
+        {
+          "name": "llmquestions:source_paths",
+          "type": {
+            "name": "kmd:string_multiple"
+          }
+        },
+        {
+          "name": "llmquestions:source_search_types",
+          "type": {
+            "name": "kmd:string_multiple"
+          }
+        }
+      ],
+      "parents": [
+        "kmeta:Editable",
+        "kmeta:File",
+        "kmeta:Spatial"
+      ]
+    },
+    {
+      "name": "llmquestions:llmModels",
+      "metaProperties": [
+        {
+          "name": "llmquestions:Description",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:llmName",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:MAX_CONTENT_LENGTH",
+          "type": {
+            "name": "xsd:int"
+          }
+        }
+      ],
+      "parents": [
+        "kmeta:Editable",
+        "kmeta:File",
+        "kmeta:Spatial"
+      ]
+    },
+    {
+      "name": "llmquestions:memoza_llm_retrieval_stats",
+      "metaProperties": [
+        {
+          "name": "llmquestions:fusion_k",
+          "type": {
+            "name": "xsd:int"
+          }
+        },
+        {
+          "name": "llmquestions:fusion_method",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:fusion_normalization",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:fusion_result",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:query_id",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:retrieval_time_ms",
+          "type": {
+            "name": "xsd:int"
+          }
+        },
+        {
+          "name": "llmquestions:search_query",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:search_runs",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:timestamp",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:total_classes_searched",
+          "type": {
+            "name": "xsd:int"
+          }
+        },
+        {
+          "name": "llmquestions:total_results",
+          "type": {
+            "name": "xsd:int"
+          }
+        },
+        {
+          "name": "llmquestions:user_query",
+          "type": {
+            "name": "xsd:string"
+          }
+        }
+      ],
+      "parents": [
+        "kmeta:Editable",
+        "kmeta:File",
+        "kmeta:Spatial"
+      ]
+    },
+    {
+      "name": "llmquestions:questions",
+      "metaProperties": [
+        {
+          "name": "llmquestions:category",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:Description",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:id_question",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:llmName",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:LLMQuestion",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:MAX_CONTENT_LENGTH",
+          "type": {
+            "name": "xsd:int"
+          }
+        },
+        {
+          "name": "llmquestions:QueryClasses",
+          "type": {
+            "name": "kmd:string_multiple"
+          }
+        },
+        {
+          "name": "llmquestions:QuestionCode",
+          "type": {
+            "name": "xsd:int"
+          }
+        },
+        {
+          "name": "llmquestions:QuestionType",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:question",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:Description",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:id_question",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:llmName",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:LLMQuestion",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:MAX_CONTENT_LENGTH",
+          "type": {
+            "name": "xsd:int"
+          }
+        },
+        {
+          "name": "llmquestions:PromptID",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:QueryClasses",
+          "type": {
+            "name": "kmd:string_multiple"
+          }
+        },
+        {
+          "name": "llmquestions:QuestionCode",
+          "type": {
+            "name": "xsd:int"
+          }
+        },
+        {
+          "name": "llmquestions:QuestionType",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:question",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:ResourcePath",
+          "type": {
+            "name": "kmd:string_multiple"
+          }
+        },
+        {
+          "name": "llmquestions:spatialObjectSource",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:spatialObjectType",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:spatialObjests",
+          "type": {
+            "name": "kmd:string_multiple"
+          }
+        }
+      ],
+      "parents": [
+        "kmeta:Editable",
+        "kmeta:File",
+        "kmeta:Spatial"
+      ]
+    },
+    {
+      "name": "llmquestions:questions_dicts",
+      "metaProperties": [
+        {
+          "name": "llmquestions:category",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:Description",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:id_question",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:llmName",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:LLMQuestion",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:MAX_CONTENT_LENGTH",
+          "type": {
+            "name": "xsd:int"
+          }
+        },
+        {
+          "name": "llmquestions:QueryClasses",
+          "type": {
+            "name": "kmd:string_multiple"
+          }
+        },
+        {
+          "name": "llmquestions:QuestionCode",
+          "type": {
+            "name": "xsd:int"
+          }
+        },
+        {
+          "name": "llmquestions:QuestionType",
+          "type": {
+            "name": "xsd:string"
+          }
+        },
+        {
+          "name": "llmquestions:question",
+          "type": {
+            "name": "xsd:string"
+          }
+        }
+      ],
+      "parents": [
+        "kmeta:Editable",
+        "kmeta:File",
+        "kmeta:Spatial"
+      ]
+    },
+    {
+      "name": "llmquestions:requests_types",
+      "metaProperties": [
+        {
+          "name": "llmquestions:QuestionCode",
+          "type": {
+            "name": "xsd:int"
+          }
+        },
+        {
+          "name": "llmquestions:QuestionType",
+          "type": {
+            "name": "xsd:string"
+          }
+        }
+      ],
+      "parents": [
+        "kmeta:Editable",
+        "kmeta:File",
+        "kmeta:Spatial"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // RestAssured для API тестов
+    testImplementation 'io.rest-assured:rest-assured:4.3.0'
+    testImplementation 'io.rest-assured:json-path:4.3.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+
+    // JUnit 5
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
+    testImplementation 'io.qameta.allure:allure-rest-assured:2.25.0'
+    testImplementation 'io.qameta.allure:allure-junit5:2.25.0'
+}
+
+test {
+    useJUnitPlatform()
+}

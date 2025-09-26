@@ -24,7 +24,6 @@ public class GetSchemaTest {
 
     @BeforeEach
     void setUpTicket() {
-
         ticket = DataHelper.loginAndGetTicket();
     }
 

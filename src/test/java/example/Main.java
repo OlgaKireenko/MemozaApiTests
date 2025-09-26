@@ -40,5 +40,8 @@ public class Main {
 
         System.out.println(ticket);
 
+        // DataHelper.getAndPrintResponse(DataHelper.loginAndGetTicket(), "/memoza-rest-server/schema/all.json");
+        DataHelper.fetchAndSaveSchemaAll(ticket, "src/test/resources/schema/all_schema_snapshot.json");
+
 
     }}

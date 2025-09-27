@@ -1,0 +1,48 @@
+name: Java CI (Gradle)        #
+on:                           #
+  push:                       #  Срабатывает на каждый пуш
+    branches:                 #  Ветки, за которыми следим
+      - main                  #
+      - my                    #  рабочая ветка (заменить на реальное имя)
+  pull_request:               #  При создании/обновлении PR
+    branches:                 #  Целевая ветка PR
+      - main                  #  Все PR, направленные в main
+
+jobs:                         #
+  build:                      #
+    runs-on: ubuntu-latest    #
+
+    steps:                    # Последовательность шагов
+      - name: Checkout source
+        uses: actions/checkout@v3
+        #Клонирует репозиторий в окружение runner’а
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+        #
+        #     'temurin' — открытая сборка OpenJDK.
+
+      - name: Cache Gradle dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+        #  Кэширует скачанные зависимости Gradle для ускорения последующих сборок.
+
+      - name: Grant execute permission for Gradlew
+        run: chmod +x gradlew
+        # Дает права на выполнение скрипту gradlew (для проектов с Gradle Wrapper).
+
+      - name: Build and run tests
+        run: ./gradlew clean build --no-daemon
+        #    Собирает проект и запускает все тесты.
+        #     clean — очистка старых артефактов.
+        #     build — компиляция + тесты + проверка.
+        #     --no-daemon — чтобы не оставался фоновый процесс Gradle.

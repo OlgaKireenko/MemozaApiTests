@@ -7,6 +7,7 @@ import io.restassured.http.Headers;
 import io.restassured.response.Response;
 
 import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -33,8 +34,8 @@ public class DataHelper {
 
     static {
         RestAssured.baseURI = BASE_URI;
+        RestAssured.useRelaxedHTTPSValidation();
     }
-
 
 
     public static Headers buildAuthHeaders(String ticket) {
@@ -133,6 +134,7 @@ public class DataHelper {
         System.out.println(status);
         return status == 200;
     }
+
     public static boolean deleteSchema(String ticket, String namespace) {
         Response response = given()
                 .baseUri(BASE_URI)
@@ -143,14 +145,56 @@ public class DataHelper {
         int status = response.getStatusCode();
         return status == 200; // или 204, если сервер так настроен
     }
-public static Response getSchema(String ticket, String namespace){
-        return  given()
+
+    public static Response getSchema(String ticket, String namespace) {
+        return given()
                 .headers(buildAuthHeaders(ticket))
                 .when().get("/memoza-rest-server/schema/nsp/" + namespace + ".json");
 
-}
+    }
 
+    public static Response getAndPrintResponse(String ticket, String url) {
 
+        Response response = given()
+                .headers(buildAuthHeaders(loginAndGetTicket()))
+                .accept(ContentType.JSON)
+                .when().get(url);
+        System.out.println("=== GET " + url + " ===");
+        response.prettyPrint();
+        System.out.println("Status: " + response.getStatusCode());
+
+        return response;
+    }
+
+    public static Response getResponse(String ticket, String url) {
+
+        Response response = given()
+                .headers(buildAuthHeaders(loginAndGetTicket()))
+                .accept(ContentType.JSON)
+                .when().get(url);
+        System.out.println("=== GET " + url + " ===");
+        //response.prettyPrint();
+        //System.out.println("Status: " + response.getStatusCode());
+
+        return response;
+    }
+
+    public static Response fetchAndSaveSchemaAll(String ticket, String targetPath) {
+        Response response = getResponse(ticket, "/memoza-rest-server/schema/all.json");
+
+        if (response.statusCode() != 200) {
+            throw new IllegalStateException("Schema request failed: " + response.statusLine());
+        }
+
+        try {
+            Path out = Path.of(targetPath);
+            Files.createDirectories(out.getParent());
+            Files.writeString(out, response.asString(), StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            throw new UncheckedIOException("Can't save schema snapshot", e);
+        }
+        return response;
+    }
 }
 
 

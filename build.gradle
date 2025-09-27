@@ -31,5 +31,7 @@ allure {
     version = '2.25.0'
     autoconfigure = true
     aspectjweaver = true
-
+    useJUnit5 {
+        version = '2.25.0'
+    }
 }

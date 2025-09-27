@@ -35,7 +35,6 @@ public class CreateSchemaTest {
         assertTrue(deleted, "Схему не удалось удалить");
     }
     //TODO: убедиться, что ответ сервера true
-
     }
 
 

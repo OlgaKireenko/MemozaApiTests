@@ -30,6 +30,15 @@ public class GetSchemaTest {
 
 
     @Test
+    public void shouldReturnAllSchemaJson() {
+        Response response = DataHelper.getSchema(ticket, "");
+        response.then()
+                .statusCode(200)
+                .contentType("application/json");
+    }
+
+
+    @Test
     public void shouldReturnSchemaJson() {
         Response response = DataHelper.getSchema(ticket, "kbox_volve");
         response.then()

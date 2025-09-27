@@ -28,6 +28,7 @@ public class DataHelper {
     public static final String username = Config.get("username");
     public static final String password = Config.get("password");
     public static final String STATIC_TOKEN = Config.get("static.token");
+    public static final String SEARCH_ENDPOINT = Config.get("search-data.endpoint");
 
 
     static {

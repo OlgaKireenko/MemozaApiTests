@@ -8,7 +8,7 @@ public class Config {
     private static final Properties props = new Properties();
 
     static {
-        String env = System.getProperty("env", "demo"); // "demo"по умолчанию test (SCDEV05)
+        String env = System.getProperty("env", "demo"); // "demo"по умолчанию test (scdev05)
         String fileName = "application-" + env + ".properties";
 
         try (InputStream input = Config.class.getClassLoader().getResourceAsStream(fileName)) {

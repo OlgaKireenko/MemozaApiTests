@@ -71,4 +71,4 @@ build/reports/allure-report/index.html
 
 ## 5. CI/CD //TO DO:
 
-В проекте можно GitHub Actions для автоматического запуска тестов и публикации Allure-отчёта в GitHub Pages при пуше в ветку `master`.
+В проекте есть GitHub Actions для автоматического запуска тестов и публикации Allure-отчёта в GitHub Pages при пуше в ветку `master`. После прогона тестов отчёт доступен тут => https://olgakireenko.github.io/MemozaApiTests/allureReport/

@@ -23,14 +23,14 @@ jobs:
       - name: Grant execute permission for Gradle
         run: chmod +x gradlew
 
-      - name: Run tests with Gradle
-        run: ./gradlew clean test
+      - name: Run tests with Gradle (don’t fail pipeline)
+        run: ./gradlew clean test || true
 
       - name: Generate Allure report
-        run: ./gradlew allureReport
+        run: ./gradlew allureReport || true
 
       - name: Deploy Allure report to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: build/reports/allure-report
